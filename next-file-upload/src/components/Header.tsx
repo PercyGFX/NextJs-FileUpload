@@ -3,6 +3,7 @@ import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import Image from "next/image";
 import { SignedOut, SignInButton } from "@clerk/nextjs";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Header = () => {
   return (
@@ -17,9 +18,9 @@ const Header = () => {
         <p className=" font-bold text-xl px-2">FILE UPLOAD</p>
       </Link>
 
-      <div className=" px-6">
+      <div className=" flex px-6">
+        <ThemeToggle />
         <UserButton afterSignOutUrl="/" />
-
         <SignedOut>
           <SignInButton afterSignInUrl="/dashboard" mode="modal" />
         </SignedOut>
